@@ -6,8 +6,6 @@ import selectionSort from "../sort/selectiom";
 import insertionSort from "../sort/insertion";
 import { merge, mergeSort } from "../sort/merge";
 import { quickSort } from "../sort/quick";
-import generateRandomArray from "../random";
-
 export default function Bottom() {
     const { size, setSize, min, setMin, max, setMax, setArray, array} = useContext(MyContext)
     if (size == 21) {
@@ -19,9 +17,6 @@ export default function Bottom() {
         arr[index1] = arr[index2];
         arr[index2] = temp;
         setArray([...arr]);
-    };
-    const resetArray = () => {
-        setArray(generateRandomArray(size, min, max));
     };
     const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
     const handleBubbleSort = async () => {
@@ -65,7 +60,6 @@ export default function Bottom() {
                 <Button text={'Insertion sort'} onClick={handleInsertionSort} />
                 <Button text={'Merge sort'} onClick={handleMergeSort} />
                 <Button text={'Quick sort'} onClick={handleQuickSort} />
-                <Button text={'reset array'} onClick={resetArray} />
             </div>
         </>
     )
